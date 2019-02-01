@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-
+//komentarzyk testowy
         Hamburger hamburger = new Hamburger("Base burger ","Chcicken", 3.55,"White bread");
         double price = hamburger.itemizeBurger();
         hamburger.addBurgerAdd1("Tomato" , 0.66);
