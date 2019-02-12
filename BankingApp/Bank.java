@@ -46,6 +46,25 @@ return false;
             }
         }
         return null;
+
+        public boolean listCustomers(String branchName, boolean shpwTransaction){
+            Branch branch = findBranch(branhName);
+            if(branch != null){
+                System.out.println("Customer details for branch " + branch.getName());
+
+                ArrayList<Customer> branchCustomers = branch.getCustomers();
+                for(int i = 0)
+            }
+
+        }
+
+
+
+
+
+
+
+
     }
 
 
@@ -77,7 +96,7 @@ return false;
 
 
 
-    
+
 
 
 }
