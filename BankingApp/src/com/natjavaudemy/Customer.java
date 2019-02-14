@@ -13,6 +13,8 @@ public class Customer {
         this.transactions = new ArrayList<Double>();
         addTransaction(initialAmount);
     }
+
+
     public void addTransaction (double amount){
         this.transactions.add(amount);
     }
@@ -23,5 +25,9 @@ return nameCustomer;
 
     public ArrayList<Double> getTransactions() {
         return transactions;
+    }
+
+    public String getNameCustomer() {
+        return nameCustomer;
     }
 }
