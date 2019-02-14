@@ -25,88 +25,54 @@ public class Bank {
         if (branch != null) {
             return branch.newCustomer(customerName, initialAmount);
         }
-return false;
+        return false;
 
     }
 
-    public boolean addCustomerTransaction(String branchName, String cusomerName, double amount){
+    public boolean addCustomerTransaction(String branchName, String cusomerName, double amount) {
 
         Branch branch = findBranch(branchName);
-        if(branch != null){
-            return branch.addCustomerTransaction(cusomerName,amount);
+        if (branch != null) {
+            return branch.addCustomerTransaction(cusomerName, amount);
         }
         return false;
 
     }
-    private Branch findBranch(String branchName){
-        for(int i = 0 ; i< this.branches.size();i++){
+
+    private Branch findBranch(String branchName) {
+        for (int i = 0; i < this.branches.size(); i++) {
             Branch checkedBranch = this.branches.get(i);
-            if(checkedBranch.getNameBranch().equals(branchName)){
+            if (checkedBranch.getNameBranch().equals(branchName)) {
                 return checkedBranch;
             }
         }
         return null;
 
-        public boolean listCustomers(String branchName, boolean shpwTransaction){
+        public boolean listCustomers(String branchName ; boolean shpwTransaction){
             Branch branch = findBranch(branchName);
-            if(branch != null){
+            if (branch != null) {
                 System.out.println("Customer details for branch " + branch.getNameBranch());
 
                 ArrayList<Customer> branchCustomers = branch.getCustomers();
-                for(int i = 0; i < branchCustomers.size();i++){
+                for (int i = 0; i < branchCustomers.size(); i++) {
                     Customer branchCustomer = branchCustomers.get(i);
-                    System.out.println("Customer" + branchCustomer.getName() + " (" + i + ")");
-                    if (shpwTransaction){
+                    System.out.println("Customer" + branchCustomer.getName() + " (" + (i + 1) + ")");
+                    if (shpwTransaction) {
                         System.out.println("Transactions: ");
                         ArrayList<Double> transactions = branchCustomer.getTransactions();
-                        for (int j = 0; j<transactions.size();j++ ){
-                            
+                        for (int j = 0; j < transactions.size(); j++) {
+                            System.out.println("[" + (j + 1) + "] Amount " + transactions.get(j));
                         }
                     }
                 }
+
             }
+
 
         }
 
 
-
-
-
-
-
-
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }
