@@ -2,6 +2,7 @@ package com.natjavaudemy;
 
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.ListIterator;
 
 public class Main {
 
@@ -18,7 +19,8 @@ public class Main {
         placeToVisit.add("Jibmaran");
 
         printList(placeToVisit);
-
+ placeToVisit.add("Canggu");
+ placeToVisit.remove(4);
     }
 
     private static void printList(LinkedList<String> linkedList){
@@ -28,6 +30,26 @@ public class Main {
 
         }
         System.out.println("End of trip.");
+
+    }
+
+    private static boolean addInOrder (LinkedList<String> linkedList, String newCity){
+        ListIterator<String> stringListIterator = linkedList.listIterator();
+
+        while (stringListIterator.hasNext()){
+            int comparision = stringListIterator.next().compareTo(newCity);
+            if(comparision==0){
+                //equal, do not add
+                System.out.println(newCity + " is already on your list.");
+            return false;
+            }else if (comparision > 0){
+                //new City should appear before this one
+                
+            }
+
+
+        }
+
 
     }
 }
