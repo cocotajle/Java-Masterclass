@@ -3,6 +3,7 @@ package com.natjavaudemy;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.ListIterator;
+import java.util.Scanner;
 
 public class Main {
 
@@ -10,6 +11,18 @@ public class Main {
         // write your code here
         LinkedList<String> placeToVisit = new LinkedList<String>();
 
+        addInOrder(placeToVisit,"Munggu");
+        addInOrder(placeToVisit,"Ubud");
+        addInOrder(placeToVisit,"Canggu");
+        addInOrder(placeToVisit,"Denpasar");
+        addInOrder(placeToVisit,"Kuta");
+        addInOrder(placeToVisit,"Tabanan");
+        addInOrder(placeToVisit,"Amed");
+        printList(placeToVisit);
+        addInOrder(placeToVisit,"Sanur");
+        printList(placeToVisit);
+
+/*
         placeToVisit.add("Ubud");
         placeToVisit.add("Amed");
         placeToVisit.add("Sanur");
@@ -20,7 +33,7 @@ public class Main {
 
         printList(placeToVisit);
         placeToVisit.add("Canggu");
-        placeToVisit.remove(4);
+        placeToVisit.remove(4);*/
     }
 
     private static void printList(LinkedList<String> linkedList) {
@@ -30,6 +43,7 @@ public class Main {
 
         }
         System.out.println("End of trip.");
+        System.out.println("\n");
 
     }
 
@@ -56,5 +70,11 @@ public class Main {
         }
         stringListIterator.add(newCity);
         return true;
+    }
+    private static void visit(LinkedList cities){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter new city to visit:");
+        String city = scanner.nextLine();
+        addInOrder(printList(city));
     }
 }
