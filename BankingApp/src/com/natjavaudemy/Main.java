@@ -20,7 +20,7 @@ public class Main {
         bank.addCustomerTransaction("Kuta","Jack", 100.0);
         bank.addCustomerTransaction("Kuta","Michelle", 1000.0);
 
-        bank.
+        bank.listCustomers("Kuta", false);
 
     }
 }
