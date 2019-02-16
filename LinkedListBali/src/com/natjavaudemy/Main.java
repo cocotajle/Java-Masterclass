@@ -107,6 +107,7 @@ public class Main {
                         System.out.println("Now visiting " + listIterator.next());
                     } else {
                         System.out.println("This is the end of the list.");
+                        goingForward = false;
                     }
                     break;
 
@@ -121,6 +122,7 @@ public class Main {
                         System.out.println("Now visiting " + listIterator.previous());
                     } else {
                         System.out.println("This is the start of te list.");
+                        goingForward = false;
                     }
                     break;
 
