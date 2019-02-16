@@ -11,16 +11,18 @@ public class Main {
         // write your code here
         LinkedList<String> placeToVisit = new LinkedList<String>();
 
-        addInOrder(placeToVisit,"Munggu");
-        addInOrder(placeToVisit,"Ubud");
-        addInOrder(placeToVisit,"Canggu");
-        addInOrder(placeToVisit,"Denpasar");
-        addInOrder(placeToVisit,"Kuta");
-        addInOrder(placeToVisit,"Tabanan");
-        addInOrder(placeToVisit,"Amed");
+        addInOrder(placeToVisit, "Munggu");
+        addInOrder(placeToVisit, "Ubud");
+        addInOrder(placeToVisit, "Canggu");
+        addInOrder(placeToVisit, "Denpasar");
+        addInOrder(placeToVisit, "Kuta");
+        addInOrder(placeToVisit, "Tabanan");
+        addInOrder(placeToVisit, "Amed");
         printList(placeToVisit);
-        addInOrder(placeToVisit,"Sanur");
+        addInOrder(placeToVisit, "Sanur");
         printList(placeToVisit);
+
+        visit(placeToVisit);
 
 /*
         placeToVisit.add("Ubud");
@@ -71,10 +73,53 @@ public class Main {
         stringListIterator.add(newCity);
         return true;
     }
-    private static void visit(LinkedList cities){
+
+    private static void visit(LinkedList cities) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter new city to visit:");
-        String city = scanner.nextLine();
-        addInOrder(printList(city));
+        boolean quit = false;
+        boolean goingForward = true;
+        ListIterator<String> listIterator = cities.listIterator();
+
+        if (cities.isEmpty()) {
+            System.out.println("No cities in list.");
+            return;
+        } else {
+            System.out.println("Now visiting " + listIterator.next());
+            printMenu();
+        }
+        while (!quit) {
+            int action = scanner.nextInt();
+            scanner.nextInt();
+            switch (action) {
+                case 0:
+                    System.out.println("Holiday over.");
+                    quit = true;
+                    break;
+                case 1:
+                    if(listIterator.hasNext()) {
+                        System.out.println("Now visiting " + listIterator.next());
+                    }else{
+                        System.out.println("This is the end of the list.");
+                    }
+                    break;
+                case 2:
+                    if(listIterator.hasPrevious()){
+                        System.out.println("Now visiting " + listIterator.previous());
+                    }else{
+                        System.out.println("This is the start of te list.");
+                    }
+                    break;
+                case 3:
+                    printMenu();
+                    break;
+            }
+        }
+    }
+    private static void printMenu(){
+        System.out.println("\nAvailable actions: \npress");
+        System.out.println("0 - to quit" +
+                "\n1 - go to next city" +
+                "\n2 - go tu previoous city" +
+                "\n3 - print menu");
     }
 }
