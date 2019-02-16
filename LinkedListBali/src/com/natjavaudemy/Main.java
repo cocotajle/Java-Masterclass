@@ -89,33 +89,49 @@ public class Main {
         }
         while (!quit) {
             int action = scanner.nextInt();
-            scanner.nextInt();
+
             switch (action) {
                 case 0:
                     System.out.println("Holiday over.");
                     quit = true;
                     break;
+
                 case 1:
-                    if(listIterator.hasNext()) {
+                    if (!goingForward) {
+                        if (listIterator.hasNext()) {
+                            listIterator.next();
+                        }
+                        goingForward = true;
+                    }
+                    if (listIterator.hasNext()) {
                         System.out.println("Now visiting " + listIterator.next());
-                    }else{
+                    } else {
                         System.out.println("This is the end of the list.");
                     }
                     break;
+
                 case 2:
-                    if(listIterator.hasPrevious()){
+                    if (goingForward) {
+                        if (listIterator.hasPrevious()) {
+                            listIterator.previous();
+                        }
+                        goingForward = false;
+                    }
+                    if (listIterator.hasPrevious()) {
                         System.out.println("Now visiting " + listIterator.previous());
-                    }else{
+                    } else {
                         System.out.println("This is the start of te list.");
                     }
                     break;
+
                 case 3:
                     printMenu();
                     break;
             }
         }
     }
-    private static void printMenu(){
+
+    private static void printMenu() {
         System.out.println("\nAvailable actions: \npress");
         System.out.println("0 - to quit" +
                 "\n1 - go to next city" +
