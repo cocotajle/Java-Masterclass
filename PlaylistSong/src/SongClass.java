@@ -7,6 +7,14 @@ public class SongClass {
         this.duration = duration;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public double getDuration() {
+        return duration;
+    }
+
     public void setTitle(String title) {
         this.title = title;
     }

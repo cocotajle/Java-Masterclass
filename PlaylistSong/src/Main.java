@@ -4,10 +4,23 @@ import java.util.ListIterator;
 import java.util.Scanner;
 
 public class Main {
+
+
     public static void main(String[] args) {
 
 LinkedList<String> songToPlay = new LinkedList<String>();
 play(songToPlay);
+
+Album album = new Album("Red Flag",);
+SongClass songClass = new SongClass("Fallen leaves", 3.21);
+
+        SongClass songClass = new SongClass("Fallen leaves", 3.21);
+        SongClass songClass = new SongClass("Fallen leaves", 3.21);
+        SongClass songClass = new SongClass("Fallen leaves", 3.21);
+
+        LinkedList<SongClass> linkedList = new LinkedList<String>;
+        linkedList.add(1,songClass);
+
 
     }
 
@@ -49,7 +62,7 @@ play(songToPlay);
 
             switch (action) {
                 case 0:
-                    System.out.println("Holiday over.");
+                    System.out.println("List is over.");
                     quit = true;
                     break;
 
@@ -76,7 +89,7 @@ play(songToPlay);
                         goingForward = false;
                     }
                     if (listIterator.hasPrevious()) {
-                        System.out.println("Now visiting " + listIterator.previous());
+                        System.out.println("Now playing " + listIterator.previous());
                     } else {
                         System.out.println("This is the start of te list.");
                         goingForward = false;
