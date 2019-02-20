@@ -5,7 +5,7 @@ import java.util.LinkedList;
 
 public class Album {
     private String albumTitle;
-    private String artistName
+    private String artistName;
     private ArrayList<Song> albumSongsList;
 
     public Album(String albumTitle, String artistName) {
@@ -42,7 +42,7 @@ public class Album {
     public boolean addToPlaylist(int tracknumber, LinkedList<Song> playList) {
 
         int index = tracknumber - 1;
-        ((index >= 00 && (index <= this.albumSongsList.size()))) {
+       if ((index >= 00 && (index <= this.albumSongsList.size()))) {
             playList.add(this.albumSongsList.get(index));
             return true;
         }
@@ -50,14 +50,14 @@ public class Album {
         return false;
     }
 
-    public boolean addToPlaylist (String titile, LinkedList<Song> playlist){
+    public boolean addToPlaylist(String titile, LinkedList<Song> playlist) {
         Song chceckedSong = findSong(titile);
-        if(chceckedSong != null){
+        if (chceckedSong != null) {
             playlist.add(chceckedSong);
             return true;
         }
         System.out.println("This song " + titile + " is not in this album.");
-        return  false;
+        return false;
     }
 
 
