@@ -1,28 +1,22 @@
 public class Song {
-    private String title;
-    private double duration;
+private String songName;
+private double songDuraation;
 
-    public Song(String title, double duration) {
-        this.title = title;
-        this.duration = duration;
+    public Song(String songName, double songDuraation) {
+        this.songName = songName;
+        this.songDuraation = songDuraation;
     }
 
-    public Song(String title, String duration) {
+    public String getSongName() {
+        return songName;
     }
 
-    public String getTitle() {
-        return title;
+    public double getSongDuraation() {
+        return songDuraation;
     }
 
-    public double getDuration() {
-        return duration;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setDuration(double duration) {
-        this.duration = duration;
+    @Override
+    public String toString() {
+        return this.songName + this.songDuraation;
     }
 }
