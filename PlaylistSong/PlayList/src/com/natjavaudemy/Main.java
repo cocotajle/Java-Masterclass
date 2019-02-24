@@ -80,9 +80,32 @@ public class Main {
                     if (listIterator.hasPrevious()){
                         System.out.println("Now playing " + listIterator.previous().toString());
                     }else{
-                        System.out.println("We are on start of the list.")
+                        System.out.println("We are on start of the list.");
                         forward = true;
                     }
+                    break;
+                case 3:
+                    if (forward){
+                        if(listIterator.hasPrevious()){
+                            System.out.println("Now replaying " + listIterator.previous().toString());
+                            forward = false;
+                        }else {
+                            System.out.println("We are at start of the list.");
+                        }
+                    }else {
+                        if(listIterator.hasNext()){
+                            System.out.println("Now replaying " + listIterator.next().toString());
+                            forward = true;
+                        }else{
+                            System.out.println("We are at the end of the plalist.");
+                        }
+                    }
+                    break;
+                case 4:
+                    printList(playlist);
+                    break;
+                case 5:
+                    printMenu();
                     break;
             }
 
