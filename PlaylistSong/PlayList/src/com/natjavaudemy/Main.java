@@ -107,6 +107,16 @@ public class Main {
                 case 5:
                     printMenu();
                     break;
+                case 6:
+                    if (playlist.size()>0){
+                        listIterator.remove();
+                        if(listIterator.hasNext()){
+                            System.out.println("Now playing " + listIterator.next().toString());
+                        }else{
+                            System.out.println("Now playing " + listIterator.previous().toString());
+                        }
+                    }
+                    break;
             }
 
         }
